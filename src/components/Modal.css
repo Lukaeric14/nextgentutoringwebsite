@@ -15,12 +15,12 @@
 }
 
 .modal-content {
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   padding: 40px;
   border-radius: 8px;
   position: relative;
   width: 90%;
-  max-width: 500px;
+  max-width: 700px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transform: translateY(-20px);
   animation: slideIn 0.6s forwards;
@@ -45,4 +45,22 @@
 @keyframes slideIn {
   from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+/* Character container with speech bubble styling */
+.modal-character-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.modal-character-image {
+  max-height: 350px;
+  object-fit: contain;
+}
+
+/* Ensure speech bubble takes appropriate space */
+.modal-character-container .speech-bubble {
+  flex: 1;
 }

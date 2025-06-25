@@ -68,10 +68,7 @@ const VideoBackground = () => {
           Become an<br />Explorer Today
         </button>
       </div>
-      <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <h2>Welcome, Explorer!</h2>
-        <p>Your next adventure awaits.</p>
-      </Modal>
+      <Modal show={showModal} onClose={() => setShowModal(false)} />
     </div>
   );
 };

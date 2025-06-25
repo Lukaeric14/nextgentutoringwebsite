@@ -1,0 +1,108 @@
+:root {
+  --radius: 16px;
+  --border-color: rgba(0, 0, 0, .15);
+  --shadow: 0 2px 4px rgba(0, 0, 0, .07);
+  --pad-y: 16px;
+  --pad-x: 20px;
+  --tail: 36px;
+}
+
+.speech-bubble {
+  position: relative;
+  max-width: 75ch;
+  width: fit-content;
+}
+
+.speech-bubble__content {
+  background-color: white;
+  padding: 16px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .07);
+  position: relative;
+  z-index: 2;
+  border-radius: 16px 16px 16px 0;
+}
+
+.speech-bubble--bottom .speech-bubble__content {
+  border-radius: 16px 16px 16px 0;
+}
+
+.speech-bubble--bottom-right .speech-bubble__content {
+  border-radius: 16px 16px 0 16px;
+}
+
+/* Optionally, add more variants for top, left, right if needed */
+
+/* Modern browsers - mask-image implementation */
+@supports (mask-image: url('')) or (-webkit-mask-image: url('')) {
+  .speech-bubble::after {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    mask-image: var(--tail-svg);
+    -webkit-mask-image: var(--tail-svg);
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    box-shadow: var(--shadow);
+    pointer-events: none;
+  }
+  .speech-bubble--bottom::after {
+    bottom: calc(var(--tail) * -0.7);
+    left: 50%;
+    transform: translateX(-50%);
+    mask-position: top center;
+    -webkit-mask-position: top center;
+  }
+  .speech-bubble--top::after {
+    top: calc(var(--tail) * -0.7);
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    mask-position: bottom center;
+    -webkit-mask-position: bottom center;
+  }
+  .speech-bubble--left::after {
+    left: calc(var(--tail) * -0.9);
+    top: 50%;
+    transform: translateY(-50%) rotate(270deg);
+    mask-position: center right;
+    -webkit-mask-position: center right;
+  }
+  .speech-bubble--right::after {
+    right: calc(var(--tail) * -0.7);
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    mask-position: center left;
+    -webkit-mask-position: center left;
+  }
+}
+
+/* Fallback for browsers that don't support mask-image */
+@supports not ((mask-image: url('')) or (-webkit-mask-image: url(''))) {
+  .speech-bubble::after {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    width: calc(var(--tail) * 0.5);
+    height: calc(var(--tail) * 0.5);
+    box-shadow: var(--shadow);
+  }
+  .speech-bubble--bottom::after {
+    bottom: calc(var(--tail) * -0.25);
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .speech-bubble--top::after {
+    top: calc(var(--tail) * -0.25);
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .speech-bubble--left::after {
+    left: calc(var(--tail) * -0.25);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .speech-bubble--right::after {
+    right: calc(var(--tail) * -0.25);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+} 
