@@ -1,0 +1,45 @@
+.vertical-nav {
+  position: absolute;
+  left: 25px;
+  top: 0;
+  height: 100vh;
+  width: 80px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.vertical-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vertical-nav li {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-nav a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  font-family: sans-serif;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  text-shadow: 0 0 0.75px transparent; /* Reserve space for shadow */
+  transition: text-shadow 0.2s ease-in-out;
+}
+
+.vertical-nav a:hover {
+  font-weight: bold;
+}

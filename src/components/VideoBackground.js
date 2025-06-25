@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './VideoBackground.css';
+import HorizontalNavBar from './HorizontalNavBar';
 
 const VideoBackground = () => {
   const videoRef = useRef(null);
@@ -29,6 +30,7 @@ const VideoBackground = () => {
 
   return (
     <div className="video-background">
+      <HorizontalNavBar />
       <video 
         ref={videoRef}
         autoPlay 
@@ -42,8 +44,10 @@ const VideoBackground = () => {
         Your browser does not support the video tag.
       </video>
       <div className="content">
-        <h1>Welcome to My Website</h1>
-        <p>This is a simple React app with a fullscreen video background</p>
+        <h1>The Explorer<br />Crew's Last Mission</h1>
+        <button className="explore-button">
+          Become an<br />Explorer Today
+        </button>
       </div>
     </div>
   );

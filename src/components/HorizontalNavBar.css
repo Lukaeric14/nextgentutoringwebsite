@@ -1,0 +1,60 @@
+.horizontal-nav-header {
+    position: absolute;
+    top: 72px; /* Match video's top margin */
+    left: 133px; /* Match video's left margin */
+    right: 133px; /* Match video's right margin */
+    z-index: 10;
+    padding-top: 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 30px;
+}
+
+.nav-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.nav-subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 0.75;
+}
+
+.nav-left,
+.nav-right {
+    width: 25%;
+}
+
+.nav-left {
+    text-align: left;
+}
+
+.nav-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
