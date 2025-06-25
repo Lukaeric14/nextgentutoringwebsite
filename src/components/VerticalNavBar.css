@@ -1,14 +1,10 @@
 .vertical-nav {
-  position: absolute;
-  left: 25px;
-  top: 0;
-  height: 100vh;
   width: 80px;
   background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  flex-shrink: 0; /* Prevent nav from shrinking */
 }
 
 .vertical-nav ul {

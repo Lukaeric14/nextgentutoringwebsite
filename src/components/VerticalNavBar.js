@@ -9,6 +9,7 @@ const VerticalNavBar = () => {
         <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
         <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="/about">About Us</a></li>
       </ul>
     </nav>
   );
