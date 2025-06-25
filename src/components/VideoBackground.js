@@ -36,6 +36,23 @@ const VideoBackground = () => {
     }, 1000);
   };
 
+  const handleVideoEnd = () => {
+    setIsVideoPlaying(false);
+    // Show the onboarding modal when the intro video ends
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const handleOnboardingComplete = (formData) => {
+    console.log('Onboarding completed with data:', formData);
+    // Here you would typically send this data to your backend
+    // or perform other actions with the collected information
+    setShowModal(false);
+  };
+
   return (
     <div className={`video-background ${isExploring ? 'exploring' : ''}`}>
       <HorizontalNavBar />
@@ -48,6 +65,7 @@ const VideoBackground = () => {
         playsInline
         className={`video background-video ${isVideoPlaying ? '' : 'video-fallback'}`}
         poster="/fallbackimage.png"
+        onEnded={handleVideoEnd}
       >
         <source src="/videos/backgroundvideo.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -68,7 +86,12 @@ const VideoBackground = () => {
           Become an<br />Explorer Today
         </button>
       </div>
-      <Modal show={showModal} onClose={() => setShowModal(false)} />
+      <Modal 
+        show={showModal} 
+        onClose={handleModalClose}
+        useFlow={true}
+        initialStep="welcome"
+      />
     </div>
   );
 };

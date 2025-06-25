@@ -1,6 +1,11 @@
 .vertical-nav {
   width: 80px;
   background-color: transparent;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
