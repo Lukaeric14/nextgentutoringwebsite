@@ -16,11 +16,10 @@
 
 .modal-content {
   background: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 8px;
+  border-radius: 20px;
   position: relative;
   width: 90%;
-  max-width: 700px;
+  max-width: 600px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transform: translateY(-20px);
   animation: slideIn 0.6s forwards;
@@ -50,7 +49,7 @@
 /* Character container with speech bubble styling */
 .modal-character-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
 }

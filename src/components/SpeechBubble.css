@@ -13,6 +13,12 @@
   width: fit-content;
 }
 
+/* Cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 .speech-bubble__content {
   background-color: white;
   padding: 16px 20px;
@@ -20,6 +26,15 @@
   position: relative;
   z-index: 2;
   border-radius: 16px 16px 16px 0;
+  font-family: Nunito, sans-serif;
+  color: #000;
+}
+
+.speech-bubble--typing .speech-bubble__content::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+  font-weight: 400;
 }
 
 .speech-bubble--bottom .speech-bubble__content {
@@ -30,7 +45,17 @@
   border-radius: 16px 16px 0 16px;
 }
 
-/* Optionally, add more variants for top, left, right if needed */
+.speech-bubble--left {
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
+
+.speech-bubble--left .speech-bubble__content {
+  border-radius: 16px 16px 0 16px;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 400px;
+}
 
 /* Modern browsers - mask-image implementation */
 @supports (mask-image: url('')) or (-webkit-mask-image: url('')) {

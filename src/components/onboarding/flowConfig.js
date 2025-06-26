@@ -19,13 +19,13 @@ export const onboardingFlow = {
         id: 'student', 
         label: "I'm a student", 
         nextStep: 'student-intro',
-        icon: '/images/characters/student-icon.png'
+        icon: '/images/icons/Student.png'
       },
       { 
         id: 'parent', 
         label: "I'm a parent", 
         nextStep: 'parent-intro',
-        icon: '/images/characters/parent-icon.png'
+        icon: '/images/icons/Parent.png'
       }
     ],
     characterImage: '/images/characters/idle/Max-wave.png'

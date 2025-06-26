@@ -33,12 +33,7 @@ const Modal = ({
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
-        {!useFlow && (
-          <>
-            <button className="modal-close" onClick={onClose}>&times;</button>
-            {children}
-          </>
-        )}
+        {!useFlow && children}
         
         {useFlow && (
           <FlowManager

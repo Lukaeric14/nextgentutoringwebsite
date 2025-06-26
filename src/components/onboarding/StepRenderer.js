@@ -30,9 +30,6 @@ const StepRenderer = ({
   
   return (
     <div className="step-container">
-      {/* Close button */}
-      <button className="close-button" onClick={onClose}>×</button>
-      
       {/* Progress bar */}
       <div className="progress-bar">
         <div 
@@ -44,10 +41,9 @@ const StepRenderer = ({
       {/* Character and speech bubble */}
       <div className="character-container">
         {step.content && (
-          <SpeechBubble position="left">
-            {step.content.title && <h3>{step.content.title}</h3>}
+          <SpeechBubble position="left" className="onboarding-speech-bubble">
             {step.content.messages && step.content.messages.map((msg, i) => (
-              <p key={i}>{msg}</p>
+              <p key={i} className="speech-message">{msg}</p>
             ))}
           </SpeechBubble>
         )}
